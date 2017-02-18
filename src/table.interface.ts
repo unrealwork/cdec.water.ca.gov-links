@@ -1,26 +1,35 @@
 export class Table {
-    private headers: string[];
-    private rows: string[][];
+    get rows(): string[][] {
+        return this._rows;
+    }
+
+    get headers(): string[] {
+        return this._headers;
+    }
+
+    private _headers: string[];
+    private _rows: string[][];
 
 
     constructor() {
-        this.headers = [];
-        this.rows = [];
+        this._headers = [];
+        this._rows = [];
     }
 
     public addHeader(header: string): void {
-        this.headers.push(header);
+        this._headers.push(header);
     }
 
+
     public addRow(row: string[]): void {
-        this.rows.push(row);
+        this._rows.push(row);
     }
 
     public getColumn(name: string): string[] {
-        let headerIndex = this.headers.indexOf(name);
+        let headerIndex = this._headers.indexOf(name);
         if (headerIndex > -1) {
             let resultColumn: string[] = [];
-            for (let row of this.rows) {
+            for (let row of this._rows) {
                 resultColumn.push(row[headerIndex]);
             }
             return resultColumn;

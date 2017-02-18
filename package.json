@@ -1,0 +1,24 @@
+{
+  "name": "cdec.water.ca.gov-links",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
+  },
+  "author": "Igor Shmagrinskiy",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/cheerio": "^0.17.31",
+    "@types/node": "^7.0.5",
+    "typescript": "^2.1.6"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "jquery": "^3.1.1",
+    "jsdom": "^9.11.0",
+    "request": "^2.79.0"
+  }
+}
